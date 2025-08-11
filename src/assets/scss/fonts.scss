@@ -1,0 +1,20 @@
+@font-face {
+  font-family: futura;
+  src: url("../fonts/futura-book.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: futura;
+  src: url("../fonts/futura-bold.woff2");
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: futura;
+  src: url("../fonts/futura-bold.woff2");
+  font-weight: 900;
+  font-style: 900;
+}
+
+$primary-font: futura;
