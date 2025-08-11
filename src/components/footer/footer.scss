@@ -1,0 +1,47 @@
+@use "@styles/vars" as *;
+
+footer {
+  background-color: #fff;
+  padding: 2em 0;
+  width: 100%;
+
+  .container {
+    display: flex;
+    // flex-direction: column;
+    flex-wrap: wrap;
+    // align-items: center;
+    gap: 3em;
+    justify-content: center;
+    text-align: center;
+    @media (min-width: 936px) {
+      justify-content: space-between;
+    }
+
+    h3 {
+      color: $primary !important;
+      text-transform: uppercase;
+      margin-top: 1em;
+    }
+
+    a {
+      display: block;
+      text-transform: uppercase;
+      padding: 0.3em;
+      color: $gray_dark;
+    }
+
+    .redes ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    .logo {
+      margin-top: 1.5em;
+      width: 13em;
+      @media (min-width: 936px) {
+        font-size: 0.9em;
+        margin-top: 0;
+      }
+    }
+  }
+}
