@@ -1,0 +1,105 @@
+@use "@styles/vars" as *;
+
+@keyframes showmenu {
+  0% {
+    transform: translateY(2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes showshoppingcart {
+  0% {
+    transform: translateY(-2em);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+header {
+  .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    @media (min-width: 850px) {
+      flex-direction: row;
+    }
+  }
+  .shopping-cart {
+    color: #fff;
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: flex;
+    align-items: center;
+    margin: 0.5em;
+    animation: showshoppingcart 0.3s linear backwards;
+    animation-delay: 1s;
+    span {
+      margin: 0.5em;
+    }
+  }
+  .logo {
+    font-size: 1em;
+    width: 10em;
+    margin: 2em;
+    @media (min-width: 900px) {
+      font-size: 1.2em;
+    }
+  }
+  .menu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.2em;
+    width: 100%;
+    @media (min-width: 700px) {
+      flex-direction: row;
+      width: auto;
+    }
+
+    li {
+      width: inherit;
+      animation: showmenu 0.3s linear backwards;
+
+      &:nth-child(2) {
+        animation-delay: 0.2s;
+      }
+      &:nth-child(3) {
+        animation-delay: 0.4s;
+      }
+      &:nth-child(4) {
+        animation-delay: 0.6s;
+      }
+      &:nth-child(5) {
+        animation-delay: 0.8s;
+      }
+    }
+
+    a {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #fff;
+      padding: 0.4em 0.3em;
+      width: inherit;
+      display: block;
+      text-align: center;
+      border-bottom: solid 0.1em rgba($color: $pink, $alpha: 0.4);
+      @media (min-width: 700px) {
+        border-color: transparent;
+      }
+
+      &:hover,
+      &.active {
+        border-color: $secondary;
+      }
+    }
+  }
+}
