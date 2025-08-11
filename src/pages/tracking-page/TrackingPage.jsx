@@ -1,3 +1,9 @@
+import { Container } from "@/components";
+
 export function TrackingPage() {
-  return <div>TrackingPage</div>;
+  return (
+    <div>
+      <Container>TrackingPage</Container>
+    </div>
+  );
 }

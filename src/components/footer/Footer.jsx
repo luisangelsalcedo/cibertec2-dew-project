@@ -1,3 +1,9 @@
+import { Container } from "../container/Container";
+
 export function Footer() {
-  return <footer>Pie de pagina</footer>;
+  return (
+    <footer>
+      <Container>Pie de pagina</Container>
+    </footer>
+  );
 }

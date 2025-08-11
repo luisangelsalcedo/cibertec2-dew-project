@@ -1,3 +1,9 @@
+import { Container } from "@/components";
+
 export function HomePage() {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <Container>HomePage</Container>
+    </div>
+  );
 }

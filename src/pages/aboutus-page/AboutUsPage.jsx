@@ -1,3 +1,9 @@
+import { Container } from "@/components";
+
 export function AboutUsPage() {
-  return <div>AboutUsPage</div>;
+  return (
+    <div>
+      <Container>AboutUsPage</Container>
+    </div>
+  );
 }

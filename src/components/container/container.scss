@@ -1,0 +1,12 @@
+.container {
+  border: solid 1px red;
+  position: relative;
+  max-width: 70rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  z-index: 20;
+
+  @media (min-width: 1200px) {
+    font-size: calc(16px + 0.2vw);
+  }
+}
