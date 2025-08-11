@@ -1,5 +1,5 @@
 import "./container.scss";
 
 export function Container({ children }) {
-  return <div class="container">{children}</div>;
+  return <div className="container">{children}</div>;
 }
