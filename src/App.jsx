@@ -1,9 +1,12 @@
+import { PopupProvider } from "./components/popup";
 import { MainRouter } from "./router/MainRouter";
 
 export function App() {
   return (
     <>
-      <MainRouter />
+      <PopupProvider>
+        <MainRouter />
+      </PopupProvider>
     </>
   );
 }

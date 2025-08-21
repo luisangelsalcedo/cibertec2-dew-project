@@ -51,7 +51,7 @@ export function Footer() {
             </ul>
           </div>
         ))}
-        <div class="redes">
+        <div className="redes">
           <h3>Siguenos en:</h3>
           <ul>
             <li>
