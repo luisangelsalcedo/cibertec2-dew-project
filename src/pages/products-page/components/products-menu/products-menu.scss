@@ -1,0 +1,64 @@
+@use "@styles/vars" as *;
+
+.menu-productos {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+  overflow: hidden;
+  border-radius: 1em;
+  margin: 2em 0;
+}
+@media (min-width: 550px) {
+  .menu-productos {
+    flex-direction: row;
+  }
+}
+.menu-productos a {
+  display: flex;
+  align-items: center;
+  gap: 0.7em;
+  border-bottom: solid 1px rgba(147, 39, 143, 0.1);
+  padding: 0.5em 1em;
+}
+@media (min-width: 550px) {
+  .menu-productos a {
+    flex: 1;
+    text-align: center;
+    flex-direction: column;
+    width: 16.6666666667%;
+  }
+}
+.menu-productos a:hover,
+.menu-productos a.active {
+  background-color: $red;
+  color: white;
+}
+.menu-productos a:hover img,
+.menu-productos a.active img {
+  filter: saturate(100%);
+}
+@media (min-width: 650px) {
+  .menu-productos a:hover img,
+  .menu-productos a.active img {
+    transform: scale(1);
+  }
+}
+.menu-productos img {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  width: 2em;
+  filter: saturate(20%);
+}
+@media (min-width: 650px) {
+  .menu-productos img {
+    transition: transform 0.2s ease;
+    transform: scale(0.8);
+    width: 4em;
+  }
+}
+@media (min-width: 1000px) {
+  .menu-productos img {
+    width: 5em;
+  }
+}
