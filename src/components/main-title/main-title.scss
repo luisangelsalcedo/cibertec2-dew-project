@@ -1,0 +1,12 @@
+@use "@styles/vars" as *;
+
+.main-title {
+  font-size: 2em;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bolder;
+  padding: 1em 0;
+}
+.main-title strong {
+  color: $secondary;
+}
