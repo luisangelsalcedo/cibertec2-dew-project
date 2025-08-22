@@ -4,3 +4,4 @@ export { default as burgers } from "./burgers.png";
 export { default as enrrollados } from "./enrrollados.png";
 export { default as mostros } from "./mostros.png";
 export { default as salchipapas } from "./salchipapas.png";
+export { default as defaultBurguer } from "./default-burger.jpg";

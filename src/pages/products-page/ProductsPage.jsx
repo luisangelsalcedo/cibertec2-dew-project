@@ -1,13 +1,20 @@
+import { useState, useEffect } from "react";
 import { useParams } from "react-router";
-import { Container } from "@/components";
-import { ProductsMenu } from "./components/products-menu/ProductsMenu";
-import { ProductList } from "./components/ProductList";
-import { MainTitle } from "@/components";
+import { Container, MainTitle } from "@/components";
+import { ProductsMenu, ProductList } from "./components/";
 import { categories } from "@/data/categories";
+import { products as productsData } from "@/data/products";
 import "./products-page.scss";
 
 export function ProductsPage() {
   const { category: categoryID } = useParams();
+  const [products, setProducts] = useState([]);
+
+  useEffect(() => {
+    setProducts(
+      productsData.filter((product) => product.category === categoryID)
+    );
+  }, [categoryID]);
 
   const currentCategory = categories.find(
     (category) => category.id === categoryID
@@ -20,7 +27,7 @@ export function ProductsPage() {
         <MainTitle>
           <strong>{currentCategory.label}</strong>
         </MainTitle>
-        <ProductList />
+        <ProductList data={products} />
       </Container>
     </div>
   );

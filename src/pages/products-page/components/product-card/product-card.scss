@@ -8,38 +8,52 @@
   overflow: hidden;
   background-color: white;
   text-align: center;
-}
-@media (min-width: 1200px) {
-  .producto-card {
+
+  @media (min-width: 1200px) {
     aspect-ratio: 4/4;
   }
-}
-.producto-card:hover {
-  background-color: $red;
-}
-.producto-card:hover img {
-  transform: scale(1.2);
-}
-.producto-card:hover .price {
-  color: white;
-}
-.producto-card .image {
-  width: 100%;
-  height: 60%;
-  overflow: hidden;
-}
-.producto-card img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  transition: transform 0.2s ease;
-  transform: scale(1);
-}
-.producto-card .text {
-  padding: 1em;
-}
-.producto-card h3 {
-  font-weight: 400;
-  padding: 0;
-  text-transform: uppercase;
+
+  &:hover {
+    background-color: $red;
+  }
+  &:hover .image img {
+    transform: scale(1.2);
+  }
+  &:hover h3 {
+    color: $secondary;
+  }
+  &:hover .price {
+    color: white;
+  }
+  .image {
+    width: 100%;
+    height: 70%;
+    overflow: hidden;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.2s ease;
+      transform: scale(1);
+    }
+  }
+  .price {
+    width: 5em;
+    text-align: right;
+    font-weight: 600;
+  }
+  .text {
+    padding: 1em;
+    display: flex;
+    gap: 2em;
+    justify-content: space-between;
+  }
+  h3 {
+    font-weight: 600;
+    line-height: 1em;
+    padding: 0;
+    text-align: left;
+    text-transform: uppercase;
+  }
 }

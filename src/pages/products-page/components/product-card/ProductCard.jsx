@@ -1,6 +1,8 @@
+import { defaultBurguer } from "@/assets/images";
 import "./product-card.scss";
 
-export function ProductCard() {
+export function ProductCard({ data }) {
+  const { name, price } = data;
   return (
     <a
       className="producto-card"
@@ -9,14 +11,11 @@ export function ProductCard() {
       id="bb-cubana"
     >
       <div className="image">
-        <img src="../assets/images/bb-cubana.jpg" alt="cubana" />
+        <img src={defaultBurguer} alt="cubana" />
       </div>
       <div className="text">
-        <h3>
-          cubana
-          <small>140 gr</small>
-        </h3>
-        <div className="price">15.00</div>
+        <h3>{name}</h3>
+        <div className="price">S/ {price}</div>
       </div>
     </a>
   );
