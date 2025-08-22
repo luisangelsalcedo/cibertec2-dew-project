@@ -1,10 +1,38 @@
-import React from "react";
+import { useFormik } from "formik";
+import * as Yup from "yup";
 import "./ContactForm.scss";
+import { usePopup } from "@/components/popup";
+
+const SignupSchema = Yup.object({
+  nombre: Yup.string().required("El nombre es requerido"),
+  apellido: Yup.string().required("El apellido es requerido"),
+  asunto: Yup.string().required("No has escrito el asunto"),
+  mensaje: Yup.string().required("El mensaje esta vacio"),
+});
 
 export default function ContactForm() {
+  const { openModal } = usePopup();
+
+  const { values, handleChange, handleSubmit, errors } = useFormik({
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      asunto: "",
+      mensaje: "",
+    },
+    validationSchema: SignupSchema,
+    onSubmit: (value) => {
+      openModal(
+        <h1>
+          gracias {value.nombre} por escribirnos sobre {value.asunto}
+        </h1>
+      );
+    },
+  });
+
   return (
     <div className="formulario">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="form-row">
           <div className="form-group">
             <label htmlFor="nombre">Nombre:</label>
@@ -13,7 +41,10 @@ export default function ContactForm() {
               id="nombre"
               name="nombre"
               placeholder="Ingresa tu nombre"
+              value={values.nombre}
+              onChange={handleChange}
             />
+            <span className="error">{errors.nombre}</span>
           </div>
 
           <div className="form-group">
@@ -23,7 +54,10 @@ export default function ContactForm() {
               id="apellido"
               name="apellido"
               placeholder="Ingresa tu apellido"
+              value={values.apellido}
+              onChange={handleChange}
             />
+            {errors.apellido}
           </div>
         </div>
 
@@ -34,7 +68,10 @@ export default function ContactForm() {
             id="asunto"
             name="asunto"
             placeholder="Ingresa el asunto"
+            value={values.asunto}
+            onChange={handleChange}
           />
+          {errors.asunto}
         </div>
 
         <div className="form-group">
@@ -43,10 +80,15 @@ export default function ContactForm() {
             id="mensaje"
             name="mensaje"
             placeholder="Escribir mensaje"
+            value={values.mensaje}
+            onChange={handleChange}
           />
+          {errors.mensaje}
         </div>
 
-        <button type="submit" className="btn">ENVIAR</button>
+        <button type="submit" className="btn">
+          ENVIAR
+        </button>
       </form>
     </div>
   );
