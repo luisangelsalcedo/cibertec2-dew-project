@@ -15,7 +15,7 @@ export function MainRouter() {
       <Routes>
         <Route path="/" element={<MainLayout />}>
           <Route index element={<HomePage />} />
-          <Route path="productos" element={<ProductsPage />} />
+          <Route path="productos/:category" element={<ProductsPage />} />
           <Route path="nosotros" element={<AboutUsPage />} />
           <Route path="tracking" element={<TrackingPage />} />
           <Route path="contactenos" element={<ContactPage />} />

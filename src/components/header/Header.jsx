@@ -8,7 +8,6 @@ import "./header.scss";
 export function Header() {
   const location = useLocation();
   const currentPath = location.pathname.slice(1, -1);
-  console.log(currentPath);
 
   return (
     <header className={currentPath ? `h-${currentPath}` : "h-home"}>

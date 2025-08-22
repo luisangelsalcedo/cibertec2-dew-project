@@ -1,40 +1,20 @@
-import {
-  alitas,
-  burgers,
-  mostros,
-  enrrollados,
-  salchipapas,
-  bebidas,
-} from "@/assets/images";
+import { Link } from "react-router";
+import { config } from "@/config";
 import "./products-menu.scss";
 
-export function ProductsMenu() {
+export function ProductsMenu({ data, current }) {
   return (
     <div className="menu-productos">
-      <a href="#">
-        <img src={alitas} alt="Alitas" />
-        <span>Alitas</span>
-      </a>
-      <a href="#" className="active">
-        <img src={burgers} alt="Big burguer's" />
-        <span>Big burguer&#39;s</span>
-      </a>
-      <a href="#">
-        <img src={mostros} alt="Mostritos" />
-        <span>Mostritos</span>
-      </a>
-      <a href="#">
-        <img src={enrrollados} alt="Enrrollados" />
-        <span>Enrrollados</span>
-      </a>
-      <a href="#">
-        <img src={salchipapas} alt="Salchipapas" />
-        <span>Salchipapas</span>
-      </a>
-      <a href="#">
-        <img src={bebidas} alt="Bebidas" />
-        <span>Bebidas</span>
-      </a>
+      {data.map(({ id, label, icon }) => (
+        <Link
+          to={`${config.base}productos/${id}`}
+          key={id}
+          className={current === id ? "active" : null}
+        >
+          <img src={icon} alt={label} />
+          <span>{label}</span>
+        </Link>
+      ))}
     </div>
   );
 }

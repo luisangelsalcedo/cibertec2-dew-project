@@ -4,7 +4,7 @@ import { Link } from "react-router";
 export function MainMenu({ currentPath }) {
   const menuItems = [
     { path: "", label: "Inicio" },
-    { path: "productos", label: "Menu" },
+    { path: "productos/burguers", label: "Menu" },
     { path: "nosotros", label: "Nosotros" },
     { path: "tracking", label: "Sigue tu pedido" },
     { path: "contactenos", label: "Contactenos" },
