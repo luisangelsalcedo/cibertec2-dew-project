@@ -1,9 +1,11 @@
-import { Container } from "@/components";
+import { MainSlider } from "./components/main-slider/MainSlider";
+import { PromoGrid } from "./components/promo-grid/PromoGrid";
 
 export function HomePage() {
   return (
     <div>
-      <Container>HomePage</Container>
+        <MainSlider></MainSlider>
+        <PromoGrid></PromoGrid>
     </div>
   );
 }
