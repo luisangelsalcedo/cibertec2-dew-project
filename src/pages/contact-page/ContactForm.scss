@@ -1,0 +1,64 @@
+.formulario {
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: 1em;
+
+        input {
+            width: 100%;
+            font-family: system-ui;
+            font-size: 1em;
+        }
+
+        .form-row {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 1em;
+            
+            @media (min-width: 700px) {
+                flex-direction: row;
+            }
+
+            .form-group {
+                flex: 1;
+            }
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            color: #ccc;
+        }
+
+        input[type="text"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            font-size: 26px;
+        }
+
+        textarea {
+            height: 200px;
+            font-family: system-ui;
+            font-size: auto;
+        }
+
+        .btn {
+            width: 100%;
+            margin-top: 6px;
+            background: #ffe44d;
+            border: 0;
+            border-radius: 12px;
+            padding: 14px 18px;
+            font-weight: 700;
+            font-size: 26px;
+            letter-spacing: .5px;
+            cursor: pointer;
+
+
+        }
+    }
+}
