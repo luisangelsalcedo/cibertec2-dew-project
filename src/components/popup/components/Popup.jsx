@@ -1,5 +1,4 @@
 import { useEffect, useRef } from "react";
-import { Container } from "@/components";
 import "./popup.scss";
 
 export function Popup({ isOpen, children, handlerClose }) {
@@ -13,12 +12,14 @@ export function Popup({ isOpen, children, handlerClose }) {
   }, [isOpen, dialog]);
 
   return (
-    <dialog id="popup" className="popup" ref={dialog}>
-      <button onClick={() => handlerClose()} className="popup-close">
-        X
-      </button>
+    <dialog id="popup" className="modal" ref={dialog}>
+      <header>
+        <button onClick={() => handlerClose()} className="btn btn-black">
+          X
+        </button>
+      </header>
 
-      <Container>{children}</Container>
+      <div>{children}</div>
     </dialog>
   );
 }

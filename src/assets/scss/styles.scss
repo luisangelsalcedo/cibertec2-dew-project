@@ -36,3 +36,24 @@ main {
   min-height: calc(100vh - 24.5rem);
   width: 100%;
 }
+
+.btn {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 1.1em;
+  padding: 0.5em 1em;
+  background-color: $secondary;
+  display: inline-block;
+  border-radius: 0.5em;
+  transition: filter 0.2s ease;
+  text-align: center;
+  box-shadow: 0 0 0.5em #00000080;
+}
+.btn-black {
+  color: #fff;
+  background-color: #333;
+}
+.btn:hover,
+.btn.active {
+  filter: brightness(80%);
+}
