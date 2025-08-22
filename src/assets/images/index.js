@@ -5,3 +5,7 @@ export { default as enrrollados } from "./enrrollados.png";
 export { default as mostros } from "./mostros.png";
 export { default as salchipapas } from "./salchipapas.png";
 export { default as defaultBurguer } from "./default-burger.jpg";
+export { default as hamburguesa } from "./hamburguesa.png";
+export { default as promo1 } from "./promo-1.jpg";
+export { default as promo2 } from "./promo-2.jpg";
+export { default as promo3 } from "./promo-3.jpg";

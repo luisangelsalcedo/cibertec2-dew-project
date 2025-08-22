@@ -1,0 +1,62 @@
+
+@use "@styles/vars" as *;
+@keyframes aparecer {
+    0% {
+      transform: scale(0.5) translateY(180px);
+      opacity: 0;
+    }
+    to {
+      transform: scale(1) translateY(10px);
+      opacity: 1;
+    }
+  }
+  .banner {
+    width: 100vw;
+    height: 700px;
+    background-color: #000;
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 50;
+  }
+  .banner .patron {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    position: absolute;
+    text-align: center;
+    bottom: 0;
+    
+  }
+
+  .img-patron{
+    width: 100%;
+  }
+
+
+  .banner .hamburguesa {
+    font-size: 1em;
+    width: 30em;
+    height: auto;
+    aspect-ratio: 5/3;
+    object-fit: cover;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    animation: aparecer 1s both ease;
+    animation-delay: 0.4s;
+  }
+  @media (min-width: 700px) {
+    .banner .hamburguesa {
+      font-size: 1.2em;
+    }
+  }
+  @media (min-width: 850px) {
+    .banner .hamburguesa {
+      font-size: 1.5em;
+    }
+  }
+
+  
