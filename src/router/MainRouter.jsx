@@ -6,6 +6,7 @@ import {
   HomePage,
   ProductsPage,
   TrackingPage,
+  WorkWithUs,
 } from "@/pages";
 
 export function MainRouter() {
@@ -18,6 +19,7 @@ export function MainRouter() {
           <Route path="nosotros" element={<AboutUsPage />} />
           <Route path="tracking" element={<TrackingPage />} />
           <Route path="contactenos" element={<ContactPage />} />
+          <Route path="trabaja-con-nosotros" element={<WorkWithUs />} />
         </Route>
         <Route path="*" element={<div>Pagina no encontrada</div>} />
       </Routes>

@@ -1,3 +1,4 @@
+import { Link } from "react-router";
 import { Container } from "../container/Container";
 import "./footer.scss";
 import { FbIcon, IgIcon, TkIcon, LogoFooter } from "@/assets/svg";
@@ -9,7 +10,7 @@ export function Footer() {
       items: [
         {
           label: "Trabaja con nosotros",
-          link: "#",
+          link: "trabaja-con-nosotros",
         },
         {
           label: "Libro de reclamaciones",
@@ -45,7 +46,7 @@ export function Footer() {
             <ul>
               {items.map(({ label, link }) => (
                 <li key={label}>
-                  <a href={link}>{label}</a>
+                  <Link to={link}>{label}</Link>
                 </li>
               ))}
             </ul>
