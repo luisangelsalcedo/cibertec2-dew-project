@@ -52,7 +52,7 @@ importers:
         specifier: 1.90.0
         version: 1.90.0
       vite:
-        specifier: 7.0.4
+        specifier: ^7.0.4
         version: 7.0.4(sass@1.90.0)
       vite-plugin-svgr:
         specifier: ^4.3.0
