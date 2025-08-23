@@ -1,0 +1,24 @@
+.formulario {
+  flex: 1;
+}
+.formulario form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+}
+
+.formulario form .form-row {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1em;
+}
+@media (min-width: 700px) {
+  .formulario form .form-row {
+    flex-direction: row;
+  }
+}
+
+.formulario form .btn {
+  width: 100%;
+}

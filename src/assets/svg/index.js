@@ -5,3 +5,7 @@ export { default as IgIcon } from "./icono_instagram.svg?react";
 export { default as TkIcon } from "./icono_tiktok.svg?react";
 export { default as LogoFooter } from "./logo_footer.svg?react";
 export { default as Patron } from "./patron.svg?react";
+export { default as DireccionIcon } from "./icono_direccion.svg?react";
+export { default as TelefonoIcon } from "./icono_telefono.svg?react";
+export { default as EmailIcon } from "./icono_email.svg?react";
+export { default as HorarioIcon } from "./icono_horario.svg?react";

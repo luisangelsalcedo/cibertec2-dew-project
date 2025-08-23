@@ -1,0 +1,32 @@
+.contact-data {
+  margin: 1em 0;
+  padding: 1em;
+  background-color: #0006;
+  backdrop-filter: blur(2px);
+  color: #fff;
+
+  @media (min-width: 700px) {
+    width: 40%;
+  }
+  @media (min-width: 950px) {
+    width: 35%;
+  }
+  @media (min-width: 1200px) {
+    width: 32%;
+  }
+
+  & ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  & li {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+  }
+  & #video {
+    width: 100%;
+    margin-top: 2em;
+  }
+}
