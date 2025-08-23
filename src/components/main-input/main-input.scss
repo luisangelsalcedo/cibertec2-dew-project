@@ -1,3 +1,5 @@
+@use "@styles/vars" as *;
+
 $error-color: #fb6e6e;
 .form-group {
   flex: 1;
@@ -17,6 +19,9 @@ $error-color: #fb6e6e;
       border: solid 2px $error-color;
     }
   }
+  input[type="file"] {
+    color: #ccc;
+  }
   label {
     display: block;
     margin-bottom: 5px;
@@ -31,5 +36,23 @@ $error-color: #fb6e6e;
   & > .error-message {
     color: $error-color;
     height: 1.3em;
+  }
+  p {
+    color: #ccc;
+  }
+  .file {
+    background-color: black;
+    border-radius: 0.5em;
+    padding: 1em;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1em;
+    input {
+      width: auto;
+      border: solid 1px #ccc;
+      color: $secondary;
+    }
   }
 }
