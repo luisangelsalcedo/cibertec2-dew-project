@@ -1,6 +1,6 @@
-export function MainButton({ children, handler, ...props }) {
+export function MainButton({ children, ...props }) {
   return (
-    <button className="btn" onClick={(e) => handler(e)} {...props}>
+    <button className="btn" {...props}>
       {children}
     </button>
   );
