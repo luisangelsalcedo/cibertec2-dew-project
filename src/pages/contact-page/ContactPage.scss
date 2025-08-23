@@ -1,67 +1,6 @@
-.contact-data {
-  margin: 1em 0;
-  padding: 1em;
-  background-color: #0006;
-  backdrop-filter: blur(2px);
-  color: #fff;
-
-  ul {
+@media (min-width: 700px) {
+  .contactenos-page .flex {
     display: flex;
-    flex-direction: column;
     gap: 1em;
-  }
-
-  li {
-    display: flex;
-    align-items: center;
-    gap: 1em;
-  }
-
-  #video {
-    width: 100%;
-    margin-top: 2em;
-  }
-}
-
-.contactenos-page {
-  .formulario {
-    flex: 1;
-  }
-
-  h2 {
-    color: #fff;
-    text-transform: uppercase;
-    font-weight: 800;
-    letter-spacing: .5px;
-    font-size: clamp(28px, 3.2vw, 48px);
-    margin: 0 0 18px;
-
-    strong {
-      color: #ffe44d;           
-      font-weight: 900;
-      margin-right: .25ch;
-    }
-  }
-
-  @media (min-width: 700px) {
-    .flex {
-      display: flex;
-      gap: 1em;
-    }
-    .contact-data {
-      width: 40%;
-    }
-  }
-
-  @media (min-width: 950px) {
-    .contact-data {
-      width: 35%;
-    }
-  }
-
-  @media (min-width: 1200px) {
-    .contact-data {
-      width: 32%;
-    }
   }
 }

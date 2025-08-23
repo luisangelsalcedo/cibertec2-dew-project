@@ -1,7 +1,8 @@
-import { useFormik } from "formik";
 import * as Yup from "yup";
-import "./ContactForm.scss";
+import { useFormik } from "formik";
 import { usePopup } from "@/components/popup";
+import { MainButton } from "@/components";
+import "./contact-form.scss";
 
 const SignupSchema = Yup.object({
   nombre: Yup.string().required("El nombre es requerido"),
@@ -10,7 +11,7 @@ const SignupSchema = Yup.object({
   mensaje: Yup.string().required("El mensaje esta vacio"),
 });
 
-export default function ContactForm() {
+export function ContactForm() {
   const { openModal } = usePopup();
 
   const { values, handleChange, handleSubmit, errors } = useFormik({
@@ -86,9 +87,7 @@ export default function ContactForm() {
           {errors.mensaje}
         </div>
 
-        <button type="submit" className="btn">
-          ENVIAR
-        </button>
+        <MainButton type="submit">ENVIAR</MainButton>
       </form>
     </div>
   );
