@@ -1,0 +1,35 @@
+$error-color: #fb6e6e;
+.form-group {
+  flex: 1;
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: solid 2px transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    outline: none;
+    font-family: system-ui;
+    font-size: 1em;
+    &.error {
+      color: $error-color;
+      border: solid 2px $error-color;
+    }
+  }
+  label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ccc;
+  }
+
+  textarea {
+    height: 200px;
+    font-family: system-ui;
+    font-size: 1em;
+  }
+  & > .error-message {
+    color: $error-color;
+    height: 1.3em;
+  }
+}

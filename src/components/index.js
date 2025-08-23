@@ -1,3 +1,4 @@
+export { MainInput } from "./main-input/MainInput";
 export { MainButton } from "./main-button/MainButton";
 export { MainTitle } from "./main-title/MainTitle";
 export { Footer } from "./footer/Footer";
