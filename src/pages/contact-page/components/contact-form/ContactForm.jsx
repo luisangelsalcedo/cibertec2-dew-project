@@ -1,8 +1,9 @@
 import * as Yup from "yup";
 import { useFormik } from "formik";
-import { usePopup } from "@/components/popup";
+// import { usePopup } from "@/components/popup";
 import { MainButton } from "@/components";
 import "./contact-form.scss";
+import { MainInput } from "../../../../components";
 
 const SignupSchema = Yup.object({
   nombre: Yup.string().required("El nombre es requerido"),
@@ -12,7 +13,7 @@ const SignupSchema = Yup.object({
 });
 
 export function ContactForm() {
-  const { openModal } = usePopup();
+  // const { openModal } = usePopup();
 
   const { values, handleChange, handleSubmit, errors } = useFormik({
     initialValues: {
@@ -23,11 +24,12 @@ export function ContactForm() {
     },
     validationSchema: SignupSchema,
     onSubmit: (value) => {
-      openModal(
-        <h1>
-          gracias {value.nombre} por escribirnos sobre {value.asunto}
-        </h1>
-      );
+      console.log(value);
+      // openModal(
+      //   <h1>
+      //     gracias {value.nombre} por escribirnos sobre {value.asunto}
+      //   </h1>
+      // );
     },
   });
 
@@ -35,47 +37,45 @@ export function ContactForm() {
     <div className="formulario">
       <form onSubmit={handleSubmit}>
         <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Ingresa tu nombre"
-              value={values.nombre}
-              onChange={handleChange}
-            />
-            <span className="error">{errors.nombre}</span>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="apellido">Apellido:</label>
-            <input
-              type="text"
-              id="apellido"
-              name="apellido"
-              placeholder="Ingresa tu apellido"
-              value={values.apellido}
-              onChange={handleChange}
-            />
-            {errors.apellido}
-          </div>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="asunto">Asunto:</label>
-          <input
-            type="text"
-            id="asunto"
-            name="asunto"
-            placeholder="Ingresa el asunto"
-            value={values.asunto}
+          <MainInput
+            label="Nombre:"
+            name="nombre"
+            placeholder="Ingresa tu nombre"
+            value={values.nombre}
             onChange={handleChange}
+            errorMessaje={errors.nombre}
           />
-          {errors.asunto}
+
+          <MainInput
+            label="Apellido:"
+            name="apellido"
+            placeholder="Ingresa tu apellido"
+            value={values.apellido}
+            onChange={handleChange}
+            errorMessaje={errors.apellido}
+          />
         </div>
 
-        <div className="form-group">
+        <MainInput
+          label="Asunto:"
+          name="asunto"
+          placeholder="Ingresa el asunto"
+          value={values.asunto}
+          onChange={handleChange}
+          errorMessaje={errors.asunto}
+        />
+
+        <MainInput
+          element="textarea"
+          label="Mensaje:"
+          name="mensaje"
+          placeholder="Erscribe tu mensaje"
+          value={values.mensaje}
+          onChange={handleChange}
+          errorMessaje={errors.mensaje}
+        />
+
+        {/* <div className="form-group">
           <label htmlFor="mensaje">Mensaje:</label>
           <textarea
             id="mensaje"
@@ -85,7 +85,7 @@ export function ContactForm() {
             onChange={handleChange}
           />
           {errors.mensaje}
-        </div>
+        </div> */}
 
         <MainButton type="submit">ENVIAR</MainButton>
       </form>
