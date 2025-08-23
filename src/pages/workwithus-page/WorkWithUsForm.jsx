@@ -1,157 +1,116 @@
-import { useFormik } from "formik";
 import * as Yup from "yup";
-import "./workwithusform.scss";
-import { usePopup } from "@/components/popup";
+import { useFormik } from "formik";
+import { MainButton, MainInput } from "@/components";
 
 const SignupSchema = Yup.object({
-  nombre: Yup.string().required("Se requiere el nombre"),
-  apellidos: Yup.string().required("Se requiere los apellidos"),
-  correo: Yup.string().required("Se requiere el correo"),
-  telefono: Yup.string().required("Se requiere el telefono"),
-  departamento: Yup.string().required("Se requiere el departamento"),
-  distrito: Yup.string().required("Se requiere el distrito"),
-  area: Yup.string().required("Está vacío"),
+  nombre: Yup.string().required("Es requerido"),
+  apellido: Yup.string().required("Es requerido"),
+  correo: Yup.string()
+    .email("Ingresa un correo valido")
+    .required("Es requerido"),
+  telefono: Yup.string().required("Es requerido"),
+  departamento: Yup.string().required("Es requerido"),
+  distrito: Yup.string().required("Es requerido"),
+  area: Yup.string().required("Es requerido"),
+  cv: Yup.string().required("Es requerido"),
 });
 
 export default function WorkWithUsForm() {
-  const { openModal } = usePopup();
-
   const { values, handleChange, handleSubmit, errors } = useFormik({
-      initialValues: {
-        nombre: "",
-        apellidos: "",
-        correo: "",
-        telefono: "",
-        departamento:"",
-        distrito: "",
-        area: "",
-      },
-
+    initialValues: {
+      nombre: "",
+      apellido: "",
+      correo: "",
+      telefono: "",
+      departamento: "",
+      distrito: "",
+      area: "",
+      cv: "",
+    },
     validationSchema: SignupSchema,
     onSubmit: (value) => {
-      openModal(
-        <h1>
-          Gracias {value.nombre} por querer trabajar con nosotros.
-        </h1>
-      );
+      console.log(value);
     },
   });
 
   return (
-    <div className="formulario">
-      <form onSubmit={handleSubmit}>
-        <div className="form-row">
-          <div className="form-group">
-            <label htmlFor="nombre">Nombre:</label>
-            <input
-              type="text"
-              id="nombre"
-              name="nombre"
-              placeholder="Ingresa tu nombre"
-              value={values.nombre}
-              onChange={handleChange}
-            />
-            <span className="error">{errors.nombre}</span>
-          </div>
-
-          <div className="form-group">
-            <label htmlFor="apellido">Apellidos:</label>
-            <input
-              type="text"
-              id="apellidos"
-              name="apellidos"
-              placeholder="Ingresa tus apellidos"
-              value={values.apellido}
-              onChange={handleChange}
-            />
-            {errors.apellido}
-          </div>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="correo">Correo electrónico:</label>
-          <input
-            type="text"
-            id="correo"
-            name="correo"
-            placeholder="Ingresa tu correo electrónico"
-            value={values.correo}
-            onChange={handleChange}
-          />
-          {errors.correo}
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="telefono">Teléfono:</label>
-          <input
-            type="text"
-            id="telefono"
-            name="telefono"
-            placeholder="Ingresa tu telefono"
-            value={values.telefono}
-            onChange={handleChange}
-          />
-          {errors.telefono}
-        </div>
-
-        <div className="form-row">
-            <div className="form-group">
-              <label htmlFor="Departamento">Departamento:</label>
-                <input
-                  type="text"
-                  id="departamento"
-                  name="departamento"
-                  placeholder="Ingresa el departamento"
-                  value={values.departamento}
-                  onChange={handleChange}
-                />
-                {errors.departamento}
-            </div>
-
-            <div className="form-group">
-              <label htmlFor="distrito">Distrito:</label>
-                <input
-                  type="text"
-                  id="distrito"
-                  name="distrito"
-                  placeholder="Ingresa el distrito"
-                  value={values.distrito}
-                  onChange={handleChange}
-                />
-                {errors.distrito}
-            </div>
-        </div>
-
-        <div className="form-group">
-          <label htmlFor="area">Área de solicitud:</label>
-            <input
-              type="text"
-              id="area"
-              name="area"
-              placeholder="Ingresa la solicitud"
-              value={values.telefono}
-              onChange={handleChange}
-            />
-            {errors.telefono}
-        </div>
-      </form>
-      <div className="cv-box">
-            <label className="cv-btn">
-              ADJUNTAR CV
-              <input
-                type="file"
-                name="cv"
-                accept=".pdf"
-                onChange={handleChange}
-                hidden
-              />
-            </label>
-            <p>Permitido subir archivo en formato PDF máx. 1 MB</p>
-            <br />
-            <button type="submit" className="submit-btn">
-              ENVIAR
-            </button>         
+    <form onSubmit={handleSubmit}>
+      <div className="form-row">
+        <MainInput
+          label="Nombres:"
+          name="nombre"
+          placeholder="Nombres"
+          value={values.nombre}
+          onChange={handleChange}
+          errorMessaje={errors.nombre}
+        />
+        <MainInput
+          label="Apellidos:"
+          name="apellido"
+          placeholder="Apellidos"
+          value={values.apellido}
+          onChange={handleChange}
+          errorMessaje={errors.apellido}
+        />
       </div>
-    </div>
+      <div className="form-row">
+        <MainInput
+          label="Correo:"
+          type="email"
+          name="correo"
+          placeholder="email"
+          value={values.correo}
+          onChange={handleChange}
+          errorMessaje={errors.correo}
+        />
+        <MainInput
+          label="Telefono:"
+          type="tel"
+          name="telefono"
+          placeholder="Teléfono"
+          value={values.telefono}
+          onChange={handleChange}
+          errorMessaje={errors.telefono}
+        />
+      </div>
+      <div className="form-row">
+        <MainInput
+          label="Departamento:"
+          name="departamento"
+          placeholder="Departamento"
+          value={values.departamento}
+          onChange={handleChange}
+          errorMessaje={errors.departamento}
+        />
+        <MainInput
+          label="Distrito:"
+          name="distrito"
+          placeholder="Distrito"
+          value={values.distrito}
+          onChange={handleChange}
+          errorMessaje={errors.distrito}
+        />
+      </div>
+      <MainInput
+        label="Área de Solicitud:"
+        type="text"
+        name="area"
+        placeholder="Solicitud"
+        value={values.area}
+        onChange={handleChange}
+        errorMessaje={errors.area}
+      />
+      <MainInput
+        label="Adjuntar CV:"
+        type="file"
+        name="cv"
+        placeholder="Solicitud"
+        value={values.cv}
+        onChange={handleChange}
+        errorMessaje={errors.cv}
+      />
+
+      <MainButton>ENVIAR</MainButton>
+    </form>
   );
 }
