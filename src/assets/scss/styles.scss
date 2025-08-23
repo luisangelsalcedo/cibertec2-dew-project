@@ -57,3 +57,18 @@ main {
 .btn.active {
   filter: brightness(80%);
 }
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5em;
+  .form-row {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 1em;
+    @media (min-width: 700px) {
+      flex-direction: row;
+    }
+  }
+}
