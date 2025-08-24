@@ -1,22 +1,21 @@
 import { useLocation } from "react-router";
-import { Logo, ShopingCarIcon } from "@/assets/svg";
+import { Logo } from "@/assets/svg";
 import { MainMenu } from "../main-menu/MainMenu";
 import { Container } from "../container/Container";
 import { config } from "@/config";
 import "./header.scss";
+import { ShoppingCartButton, useShoppingCart } from "../shopping-cart/";
 
 export function Header() {
   const location = useLocation();
   const currentPath = location.pathname.slice(1);
-
-  console.log(currentPath);
+  const { totalProductCount } = useShoppingCart();
 
   return (
     <header className={currentPath ? `h-${currentPath}` : "h-home"}>
       <Container>
-        <div className="shopping-cart" id="shopping-cart">
-          <ShopingCarIcon alt="icono shopping cart" /> <span>0</span>
-        </div>
+        <ShoppingCartButton>{totalProductCount}</ShoppingCartButton>
+
         <a href={config.base}>
           <Logo className="logo" />
         </a>
