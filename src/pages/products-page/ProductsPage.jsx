@@ -1,32 +1,25 @@
-import { useState, useEffect } from "react";
-import { useParams } from "react-router";
 import { Container, MainTitle } from "@/components";
 import { ProductsMenu, ProductList } from "./components/";
 import { categories } from "@/data/categories";
-import { products as productsData } from "@/data/products";
+import { useProduct } from "./hook/useProduct";
+import { ProductSearch } from "./components/product-search/ProductSearch";
 import "./products-page.scss";
 
 export function ProductsPage() {
-  const { category: categoryID } = useParams();
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    setProducts(
-      productsData.filter((product) => product.category === categoryID)
-    );
-  }, [categoryID]);
-
-  const currentCategory = categories.find(
-    (category) => category.id === categoryID
-  );
-
+  const { products, currentCategory } = useProduct();
+  console.log(currentCategory);
   return (
     <div className="productos-page">
       <Container>
-        <ProductsMenu current={categoryID} data={categories} />
-        <MainTitle>
-          <strong>{currentCategory.label}</strong>
-        </MainTitle>
+        <ProductsMenu current={currentCategory.id} data={categories} />
+        <div className="flex">
+          <MainTitle>
+            <strong>{currentCategory.label}</strong>
+          </MainTitle>
+          {products.length > 8 && (
+            <ProductSearch>{`Buscar ${currentCategory.label}`}</ProductSearch>
+          )}
+        </div>
         <ProductList data={products} />
       </Container>
     </div>

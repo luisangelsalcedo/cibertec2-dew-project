@@ -1,46 +1,5 @@
 @use "@styles/vars" as *;
 
-.modal[data-astro-cid-qmzm2soj] {
-  position: fixed;
-  inset: 0;
-  margin: auto;
-  border: 0;
-  border-radius: 1em;
-  box-shadow: 0 0.5em 1em black;
-  width: 95%;
-  height: 95%;
-  @media (min-width: 700px) {
-    width: 70%;
-    height: 60%;
-  }
-  div {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-    height: 100%;
-  }
-  form {
-    position: absolute;
-    right: 0.5em;
-    top: 0.5em;
-    z-index: 20;
-    button {
-      width: 2.5em;
-      height: 2.5em;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1em;
-      font-family: arial;
-    }
-  }
-  &::backdrop {
-    background-color: #000c;
-    backdrop-filter: blur(2px);
-  }
-}
-
 .producto-detalle {
   width: 100%;
   display: flex;
@@ -86,7 +45,17 @@
 }
 .producto-list {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  // grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: 1fr;
+  @media (min-width: 500px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media (min-width: 800px) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  @media (min-width: 1000px) {
+    grid-template-columns: repeat(4, 1fr);
+  }
   gap: 1em;
 }
 .productos-page {

@@ -9,3 +9,4 @@ export { default as DireccionIcon } from "./icono_direccion.svg?react";
 export { default as TelefonoIcon } from "./icono_telefono.svg?react";
 export { default as EmailIcon } from "./icono_email.svg?react";
 export { default as HorarioIcon } from "./icono_horario.svg?react";
+export { default as SearchIcon } from "./search-icon.svg?react";
