@@ -1,4 +1,4 @@
-import { useLocation } from "react-router";
+import { Link, useLocation } from "react-router";
 import { Logo } from "@/assets/svg";
 import { MainMenu } from "../main-menu/MainMenu";
 import { Container } from "../container/Container";
@@ -16,9 +16,9 @@ export function Header() {
       <Container>
         <ShoppingCartButton>{totalProductCount}</ShoppingCartButton>
 
-        <a href={config.base}>
+        <Link to={config.base}>
           <Logo className="logo" />
-        </a>
+        </Link>
         <MainMenu currentPath={currentPath} />
       </Container>
     </header>
