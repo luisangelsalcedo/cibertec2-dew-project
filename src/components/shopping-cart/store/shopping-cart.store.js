@@ -28,6 +28,8 @@ export const useShoppingCartStore = create((set, get) => ({
     set((state) => {
       const currentList = [...state.shoppingCarList];
 
+      if (currentList[index].count == 1) return state;
+
       currentList[index] = {
         ...currentList[index],
         count: currentList[index].count - 1,
