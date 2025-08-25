@@ -6,7 +6,7 @@ export function MainMenu({ currentPath }) {
     { path: "", label: "Inicio" },
     { path: "productos/burguers", label: "Menu" },
     { path: "nosotros", label: "Nosotros" },
-    { path: "tracking", label: "Sigue tu pedido" },
+    // { path: "tracking", label: "Sigue tu pedido" },
     { path: "contactenos", label: "Contactenos" },
   ];
 
