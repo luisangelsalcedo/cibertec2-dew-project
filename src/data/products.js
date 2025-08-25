@@ -8,7 +8,7 @@ export const products = [
     price: 15.0,
     weight: 140,
     category: "burguers",
-    image: "la_cubana.jpg",
+    image: "bb-cubana.jpg",
   },
   {
     id: "burger_mexican_9b4e",
@@ -18,7 +18,7 @@ export const products = [
     price: 15.0,
     weight: 140,
     category: "burguers",
-    image: "la_mexican.jpg",
+    image: "bb-mexican.jpg",
   },
   {
     id: "burger_hawai_5e2f",
@@ -28,7 +28,7 @@ export const products = [
     price: 15.0,
     weight: 140,
     category: "burguers",
-    image: "hawai.jpg",
+    image: "bb-hawai.jpg",
   },
   {
     id: "burger_bigbacon_6g7h",
@@ -38,7 +38,7 @@ export const products = [
     price: 15.0,
     weight: 140,
     category: "burguers",
-    image: "big_bacon.jpg",
+    image: "bb-bigbacon.jpg",
   },
   {
     id: "burger_tripleh_3k9j",
@@ -48,7 +48,17 @@ export const products = [
     price: 15.0,
     weight: 140,
     category: "burguers",
-    image: "triple_h.jpg",
+    image: "bb-triple-h.jpg",
+  },
+  {
+    id: "burger_lachola_8p5q",
+    name: "La Chola",
+    description:
+      "Nuestra hamburguesa estrella: chicharrón de cerdo, yuca frita, salsa cajachera y cebolla encurtida. 100% cajamarquino.",
+    price: 17.0,
+    weight: 140,
+    category: "burguers",
+    image: "bb-super-ch.jpg",
   },
   {
     id: "burger_andina_4m2n",
@@ -60,16 +70,7 @@ export const products = [
     category: "burguers",
     image: "andina.jpg",
   },
-  {
-    id: "burger_lachola_8p5q",
-    name: "La Chola",
-    description:
-      "Nuestra hamburguesa estrella: chicharrón de cerdo, yuca frita, salsa cajachera y cebolla encurtida. 100% cajamarquino.",
-    price: 17.0,
-    weight: 140,
-    category: "burguers",
-    image: "la_chola.jpg",
-  },
+
   {
     id: "burger_fogon_4x8y",
     name: "El Fogón",

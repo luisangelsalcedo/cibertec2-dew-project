@@ -7,7 +7,6 @@ import "./products-page.scss";
 
 export function ProductsPage() {
   const { products, currentCategory } = useProduct();
-  console.log(currentCategory);
   return (
     <div className="productos-page">
       <Container>

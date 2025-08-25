@@ -19,7 +19,7 @@ export function Popup({ isOpen, children, handlerClose }) {
         </button>
       </header>
 
-      <div>{children}</div>
+      <div className="content">{children}</div>
     </dialog>
   );
 }

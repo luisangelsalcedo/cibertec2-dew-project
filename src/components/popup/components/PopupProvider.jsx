@@ -17,7 +17,7 @@ export function PopupProvider({ children }) {
   };
 
   return (
-    <PopupContext.Provider value={{ isOpen, openModal }}>
+    <PopupContext.Provider value={{ isOpen, openModal, closeModal }}>
       <Popup isOpen={isOpen} handlerClose={closeModal}>
         {content}
       </Popup>

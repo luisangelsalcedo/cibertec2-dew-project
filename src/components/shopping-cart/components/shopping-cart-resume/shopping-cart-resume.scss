@@ -1,0 +1,33 @@
+.shoppingcart-resumen {
+  & > div {
+    margin: 0.5em;
+    padding: 1.5em;
+    border-radius: 1em;
+    background-color: #ddd;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+  }
+  h3 {
+    border-bottom: solid 0.1em #ccc;
+  }
+  ul {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+
+    li {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      strong {
+        color: black;
+      }
+    }
+  }
+
+  button {
+    width: 100%;
+  }
+}
